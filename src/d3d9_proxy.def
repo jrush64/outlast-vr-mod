@@ -1,0 +1,9 @@
+; d3d9_proxy.def - the exports this proxy must provide.
+; Binaries\Win64\OLGame.exe imports EXACTLY these 4 names from d3d9.dll (verified by
+; parsing the PE import table, 2026-07-21). Listing the undecorated names makes MSVC
+; export them undecorated so the game's import thunks bind to us.
+EXPORTS
+    Direct3DCreate9
+    D3DPERF_BeginEvent
+    D3DPERF_EndEvent
+    D3DPERF_SetOptions
